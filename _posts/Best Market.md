@@ -1,3 +1,10 @@
+---
+title: "Market Project"
+date: 2019-08-06
+tags: [data analytics]
+header:
+      image: "/imegas/sudoku.jpg"
+---
 
 ## Finding The Best Market to Advertise In
 
@@ -20,7 +27,7 @@ A good candidate for the dataset to use is the data from [freeCodeCamp's 2017 Co
 #import
 import pandas as pd
 
-pd.options.display.max_columns = 150 # to avoid truncated output 
+pd.options.display.max_columns = 150 # to avoid truncated output
 ```
 
 
@@ -31,7 +38,7 @@ coders_survey = pd.read_csv('2017-fCC-New-Coders-Survey-Data.csv')
 
     C:\Users\maria\Anaconda3\lib\site-packages\IPython\core\interactiveshell.py:2785: DtypeWarning: Columns (17,62) have mixed types. Specify dtype option on import or set low_memory=False.
       interactivity=interactivity, compiler=compiler, result=result)
-    
+
 
 
 ```python
@@ -961,7 +968,7 @@ coders_survey["JobRoleInterest"].value_counts(normalize=True) * 100
     Full-Stack Web Developer,   Data Scientist                                                                                                                                                                                                0.243135
       Mobile Developer, Game Developer                                                                                                                                                                                                        0.228833
       Data Scientist, Data Engineer                                                                                                                                                                                                           0.228833
-                                                                                                                                                                                                                                               ...    
+                                                                                                                                                                                                                                               ...
     Game Developer,   DevOps / SysAdmin,   Front-End Web Developer, Full-Stack Web Developer, Back-End Web Developer                                                                                                                          0.014302
       Mobile Developer, Game Developer, Back-End Web Developer, Full-Stack Web Developer,   Front-End Web Developer,   User Experience Designer, User Interface Designer                                                                      0.014302
       Mobile Developer, Game Developer,   DevOps / SysAdmin, Information Security, Data Engineer                                                                                                                                              0.014302
@@ -1029,7 +1036,7 @@ interests_num.value_counts(normalize=True).sort_index() * 100
 
 
 
-The frequency table above shows that only 31.6% of people chose only one programming niche of interest. 
+The frequency table above shows that only 31.6% of people chose only one programming niche of interest.
 
 The focus of our interest in web and mobile development. Let's find out how many people are interested in at least one of these two subjects.
 
@@ -1472,7 +1479,7 @@ coders_no_null["MonthsProgramming"].value_counts().sort_index()
     27.0       8
     28.0      13
     29.0       6
-            ... 
+            ...
     73.0       1
     75.0       2
     80.0       3
@@ -1651,7 +1658,7 @@ plt.show()
 
     C:\Users\maria\Anaconda3\lib\site-packages\ipykernel_launcher.py:1: UserWarning: Boolean Series key will be reindexed to match DataFrame index.
       """Entry point for launching an IPython kernel.
-    
+
 
 
 ![png](output_31_1.png)
@@ -1662,7 +1669,7 @@ We find some outliers for India. Let's isolate those rows to figure out whether 
 
 ```python
 india_outliers = countries_top_four[
-    (countries_top_four['CountryLive'] == 'India') & 
+    (countries_top_four['CountryLive'] == 'India') &
     (countries_top_four['money_per_month'] >= 2500)]
 india_outliers
 ```
@@ -2713,12 +2720,12 @@ plt.show()
 ![png](output_37_0.png)
 
 
-Let's isolate the outliers for US. 
+Let's isolate the outliers for US.
 
 
 ```python
 usa_outliers = countries_top_four[
-    (countries_top_four['CountryLive'] == 'United States of America') & 
+    (countries_top_four['CountryLive'] == 'United States of America') &
     (countries_top_four['money_per_month'] >= 6000)]
 usa_outliers
 ```
@@ -5661,7 +5668,7 @@ countries_top_four.groupby('CountryLive').mean()['money_per_month'].sort_values(
 
 
 ### Choosing the Two Best Markets
-Considering the results we've found so far, one country we should advertise in is the USA. Many new coders are living in the USA and they are willing to pay a good amount of money each month. 
+Considering the results we've found so far, one country we should advertise in is the USA. Many new coders are living in the USA and they are willing to pay a good amount of money each month.
 
 We need to choose the best second country to invest in advertisement.
 
@@ -5690,4 +5697,4 @@ At this point would be better to send our investigation results to the marketing
 ### Conclusion
 In this project, we analyzed survey data from new coders to find the best two markets to advertise in. The only solid conclusion we reached is that the US would be a good market for advertisement.
 
-For the second-best market, it wasn't clear what to choose between India and Canada. We decided to send the results to the market team so they can use their domain knowledge to make the best decision. 
+For the second-best market, it wasn't clear what to choose between India and Canada. We decided to send the results to the market team so they can use their domain knowledge to make the best decision.
