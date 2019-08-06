@@ -4,6 +4,8 @@ date: 2019-08-06
 tags: [data analytics]
 header:
       image: "/imegas/sudoku.jpg"
+excerpt: "Best Market"
+mathjax: "true"
 ---
 
 ## Finding The Best Market to Advertise In
